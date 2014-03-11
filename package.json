@@ -1,0 +1,22 @@
+{
+  "name": "htmlcrawler",
+  "version": "0.1.1",
+  "repository": "git://github.com/tedjt/htmlcrawler.git",
+  "license": "MIT",
+  "description": "Crawl web pages using a requests and cheerio",
+  "keywords": [
+    "cheerio",
+    "API",
+    "scrape",
+    "webpage"
+  ],
+  "dependencies": {
+    "debug": "~0.7.4",
+    "defaults": "~1.0.0",
+    "cheerio": "~0.13.1",
+    "request": "~2.34.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.15.1"
+  }
+}
