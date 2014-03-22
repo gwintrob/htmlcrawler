@@ -1,6 +1,6 @@
 
 var cheerio = require('cheerio');
-var debug = require('debug')('scraper');
+var debug = require('debug')('crawler');
 var defaults = require('defaults');
 var request = require('request');
 
