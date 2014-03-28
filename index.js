@@ -26,6 +26,11 @@ function Crawler (options) {
       'cache-control'   :'max-age=0'
     }
   });
+  if (this.options.proxyManager) {
+    this.proxyManager = this.options.proxyManager;
+  } else {
+    this.proxyManager = {get: request};
+  }
 }
 
 /**
@@ -48,7 +53,7 @@ Crawler.prototype.load = function (url, options, callback) {
   debug('loading page %s', url);
 
   var req = { url: url, headers: options.headers };
-  request(req, function (error, response, body) {
+  this.proxyManager.get(req, function (error, response, body) {
     if (error) return callback(error);
     if (!response) return callback(new Error('No response received'));
     if (response.statusCode != 200) return callback(new Error('bad status code ' + response.statusCode));
