@@ -28,6 +28,8 @@ function Crawler (options) {
   });
   if (this.options.proxyManager) {
     this.proxyManager = this.options.proxyManager;
+    // delete so that defaults can be used below
+    delete this.options.proxyManager;
   } else {
     this.proxyManager = {get: request};
   }
