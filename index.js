@@ -55,6 +55,9 @@ Crawler.prototype.load = function (url, options, callback) {
   debug('loading page %s', url);
 
   var req = { url: url, headers: options.headers };
+  if (options.extraParams) {
+    req = defaults(req, options.extraParams);
+  }
   this.proxyManager.get(req, function (error, response, body) {
     if (error) return callback(error);
     if (!response) return callback(new Error('No response received'));
