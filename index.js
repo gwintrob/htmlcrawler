@@ -61,7 +61,7 @@ Crawler.prototype.load = function (url, options, callback) {
   this.proxyManager.get(req, function (error, response, body) {
     if (error) return callback(error);
     if (!response) return callback(new Error('No response received'));
-    if (response.statusCode != 200) return callback(new Error('bad status code ' + response.statusCode));
+    if (response.statusCode != 200) return callback(new Error('bad status code ' + response.statusCode), response);
     debug('succesfully loaded page %s', url);
 
     $ = cheerio.load(body);
