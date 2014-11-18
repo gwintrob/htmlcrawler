@@ -17,6 +17,7 @@
     "request": "~2.34.0"
   },
   "devDependencies": {
+    "should": "^4.2.0",
     "mocha": "~1.15.1"
   }
 }
